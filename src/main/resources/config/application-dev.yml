@@ -32,9 +32,10 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/SimpleSite
-    username: SimpleSite
-    password:
+    url: 'jdbc:postgresql://localhost:5432/compose-postgres'
+    username: 'compose-postgres'
+    password: 'compose-postgres'
+    driver-class-name: org.postgresql.Driver
     hikari:
       poolName: Hikari
       auto-commit: false
