@@ -2,13 +2,13 @@
 version: '3.8'
 services:
   simplesite-app:
-    image: simplesite
+    image: simplesite:latest
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
       - SPRING_PROFILES_ACTIVE=prod,api-docs
       - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://simplesite-postgresql:5432/SimpleSite
-      - SPRING_LIQUIBASE_URL=jdbc:postgresql://simplesite-postgresql:5432/SimpleSite
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://simplesite-postgresql:5432/compose-postgres
+      - SPRING_LIQUIBASE_URL=jdbc:postgresql://simplesite-postgresql:5432/compose-postgres
       - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix
@@ -19,9 +19,8 @@ services:
     # volumes:
     #   - ~/volumes/jhipster/SimpleSite/postgresql/:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=SimpleSite
-      - POSTGRES_PASSWORD=
-      - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_USER=compose-postgres
+      - POSTGRES_PASSWORD=compose-postgres
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix
     ports:
