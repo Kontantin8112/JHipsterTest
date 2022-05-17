@@ -150,6 +150,9 @@ public class EmployeeResource {
                 if (employee.getCommissionPct() != null) {
                     existingEmployee.setCommissionPct(employee.getCommissionPct());
                 }
+                if (employee.getIsEngineer() != null) {
+                    existingEmployee.setIsEngineer(employee.getIsEngineer());
+                }
 
                 return existingEmployee;
             })

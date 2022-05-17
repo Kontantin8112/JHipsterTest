@@ -76,6 +76,12 @@ export const EmployeeDetail = (props: RouteComponentProps<{ id: string }>) => {
           </dt>
           <dd>{employeeEntity.commissionPct}</dd>
           <dt>
+            <span id="isEngineer">
+              <Translate contentKey="simpleSiteApp.employee.isEngineer">Is Engineer</Translate>
+            </span>
+          </dt>
+          <dd>{employeeEntity.isEngineer ? 'true' : 'false'}</dd>
+          <dt>
             <Translate contentKey="simpleSiteApp.employee.manager">Manager</Translate>
           </dt>
           <dd>{employeeEntity.manager ? employeeEntity.manager.id : ''}</dd>

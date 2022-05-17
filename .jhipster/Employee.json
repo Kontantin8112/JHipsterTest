@@ -33,6 +33,10 @@
     {
       "fieldName": "commissionPct",
       "fieldType": "Long"
+    },
+    {
+      "fieldName": "isEngineer",
+      "fieldType": "Boolean"
     }
   ],
   "fluentMethods": true,

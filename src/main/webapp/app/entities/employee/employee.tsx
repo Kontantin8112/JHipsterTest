@@ -145,6 +145,9 @@ export const Employee = (props: RouteComponentProps<{ url: string }>) => {
                   <th className="hand" onClick={sort('commissionPct')}>
                     <Translate contentKey="simpleSiteApp.employee.commissionPct">Commission Pct</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
+                  <th className="hand" onClick={sort('isEngineer')}>
+                    <Translate contentKey="simpleSiteApp.employee.isEngineer">Is Engineer</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
                   <th>
                     <Translate contentKey="simpleSiteApp.employee.manager">Manager</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
@@ -169,6 +172,7 @@ export const Employee = (props: RouteComponentProps<{ url: string }>) => {
                     <td>{employee.hireDate ? <TextFormat type="date" value={employee.hireDate} format={APP_DATE_FORMAT} /> : null}</td>
                     <td>{employee.salary}</td>
                     <td>{employee.commissionPct}</td>
+                    <td>{employee.isEngineer ? 'true' : 'false'}</td>
                     <td>{employee.manager ? <Link to={`/employee/${employee.manager.id}`}>{employee.manager.id}</Link> : ''}</td>
                     <td>{employee.department ? <Link to={`/department/${employee.department.id}`}>{employee.department.id}</Link> : ''}</td>
                     <td className="text-end">

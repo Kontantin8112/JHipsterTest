@@ -53,6 +53,9 @@ class EmployeeResourceIT {
     private static final Long DEFAULT_COMMISSION_PCT = 1L;
     private static final Long UPDATED_COMMISSION_PCT = 2L;
 
+    private static final Boolean DEFAULT_IS_ENGINEER = false;
+    private static final Boolean UPDATED_IS_ENGINEER = true;
+
     private static final String ENTITY_API_URL = "/api/employees";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -84,7 +87,8 @@ class EmployeeResourceIT {
             .phoneNumber(DEFAULT_PHONE_NUMBER)
             .hireDate(DEFAULT_HIRE_DATE)
             .salary(DEFAULT_SALARY)
-            .commissionPct(DEFAULT_COMMISSION_PCT);
+            .commissionPct(DEFAULT_COMMISSION_PCT)
+            .isEngineer(DEFAULT_IS_ENGINEER);
         return employee;
     }
 
@@ -102,7 +106,8 @@ class EmployeeResourceIT {
             .phoneNumber(UPDATED_PHONE_NUMBER)
             .hireDate(UPDATED_HIRE_DATE)
             .salary(UPDATED_SALARY)
-            .commissionPct(UPDATED_COMMISSION_PCT);
+            .commissionPct(UPDATED_COMMISSION_PCT)
+            .isEngineer(UPDATED_IS_ENGINEER);
         return employee;
     }
 
@@ -136,6 +141,7 @@ class EmployeeResourceIT {
         assertThat(testEmployee.getHireDate()).isEqualTo(DEFAULT_HIRE_DATE);
         assertThat(testEmployee.getSalary()).isEqualTo(DEFAULT_SALARY);
         assertThat(testEmployee.getCommissionPct()).isEqualTo(DEFAULT_COMMISSION_PCT);
+        assertThat(testEmployee.getIsEngineer()).isEqualTo(DEFAULT_IS_ENGINEER);
     }
 
     @Test
@@ -179,7 +185,8 @@ class EmployeeResourceIT {
             .andExpect(jsonPath("$.[*].phoneNumber").value(hasItem(DEFAULT_PHONE_NUMBER)))
             .andExpect(jsonPath("$.[*].hireDate").value(hasItem(DEFAULT_HIRE_DATE.toString())))
             .andExpect(jsonPath("$.[*].salary").value(hasItem(DEFAULT_SALARY.intValue())))
-            .andExpect(jsonPath("$.[*].commissionPct").value(hasItem(DEFAULT_COMMISSION_PCT.intValue())));
+            .andExpect(jsonPath("$.[*].commissionPct").value(hasItem(DEFAULT_COMMISSION_PCT.intValue())))
+            .andExpect(jsonPath("$.[*].isEngineer").value(hasItem(DEFAULT_IS_ENGINEER.booleanValue())));
     }
 
     @Test
@@ -200,7 +207,8 @@ class EmployeeResourceIT {
             .andExpect(jsonPath("$.phoneNumber").value(DEFAULT_PHONE_NUMBER))
             .andExpect(jsonPath("$.hireDate").value(DEFAULT_HIRE_DATE.toString()))
             .andExpect(jsonPath("$.salary").value(DEFAULT_SALARY.intValue()))
-            .andExpect(jsonPath("$.commissionPct").value(DEFAULT_COMMISSION_PCT.intValue()));
+            .andExpect(jsonPath("$.commissionPct").value(DEFAULT_COMMISSION_PCT.intValue()))
+            .andExpect(jsonPath("$.isEngineer").value(DEFAULT_IS_ENGINEER.booleanValue()));
     }
 
     @Test
@@ -229,7 +237,8 @@ class EmployeeResourceIT {
             .phoneNumber(UPDATED_PHONE_NUMBER)
             .hireDate(UPDATED_HIRE_DATE)
             .salary(UPDATED_SALARY)
-            .commissionPct(UPDATED_COMMISSION_PCT);
+            .commissionPct(UPDATED_COMMISSION_PCT)
+            .isEngineer(UPDATED_IS_ENGINEER);
 
         restEmployeeMockMvc
             .perform(
@@ -251,6 +260,7 @@ class EmployeeResourceIT {
         assertThat(testEmployee.getHireDate()).isEqualTo(UPDATED_HIRE_DATE);
         assertThat(testEmployee.getSalary()).isEqualTo(UPDATED_SALARY);
         assertThat(testEmployee.getCommissionPct()).isEqualTo(UPDATED_COMMISSION_PCT);
+        assertThat(testEmployee.getIsEngineer()).isEqualTo(UPDATED_IS_ENGINEER);
     }
 
     @Test
@@ -328,7 +338,11 @@ class EmployeeResourceIT {
         Employee partialUpdatedEmployee = new Employee();
         partialUpdatedEmployee.setId(employee.getId());
 
-        partialUpdatedEmployee.lastName(UPDATED_LAST_NAME).email(UPDATED_EMAIL).commissionPct(UPDATED_COMMISSION_PCT);
+        partialUpdatedEmployee
+            .lastName(UPDATED_LAST_NAME)
+            .email(UPDATED_EMAIL)
+            .commissionPct(UPDATED_COMMISSION_PCT)
+            .isEngineer(UPDATED_IS_ENGINEER);
 
         restEmployeeMockMvc
             .perform(
@@ -350,6 +364,7 @@ class EmployeeResourceIT {
         assertThat(testEmployee.getHireDate()).isEqualTo(DEFAULT_HIRE_DATE);
         assertThat(testEmployee.getSalary()).isEqualTo(DEFAULT_SALARY);
         assertThat(testEmployee.getCommissionPct()).isEqualTo(UPDATED_COMMISSION_PCT);
+        assertThat(testEmployee.getIsEngineer()).isEqualTo(UPDATED_IS_ENGINEER);
     }
 
     @Test
@@ -371,7 +386,8 @@ class EmployeeResourceIT {
             .phoneNumber(UPDATED_PHONE_NUMBER)
             .hireDate(UPDATED_HIRE_DATE)
             .salary(UPDATED_SALARY)
-            .commissionPct(UPDATED_COMMISSION_PCT);
+            .commissionPct(UPDATED_COMMISSION_PCT)
+            .isEngineer(UPDATED_IS_ENGINEER);
 
         restEmployeeMockMvc
             .perform(
@@ -393,6 +409,7 @@ class EmployeeResourceIT {
         assertThat(testEmployee.getHireDate()).isEqualTo(UPDATED_HIRE_DATE);
         assertThat(testEmployee.getSalary()).isEqualTo(UPDATED_SALARY);
         assertThat(testEmployee.getCommissionPct()).isEqualTo(UPDATED_COMMISSION_PCT);
+        assertThat(testEmployee.getIsEngineer()).isEqualTo(UPDATED_IS_ENGINEER);
     }
 
     @Test

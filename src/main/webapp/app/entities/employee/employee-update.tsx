@@ -152,6 +152,14 @@ export const EmployeeUpdate = (props: RouteComponentProps<{ id: string }>) => {
                 type="text"
               />
               <ValidatedField
+                label={translate('simpleSiteApp.employee.isEngineer')}
+                id="employee-isEngineer"
+                name="isEngineer"
+                data-cy="isEngineer"
+                check
+                type="checkbox"
+              />
+              <ValidatedField
                 id="employee-manager"
                 name="manager"
                 data-cy="manager"

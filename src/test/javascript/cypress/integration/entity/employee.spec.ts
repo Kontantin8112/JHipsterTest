@@ -167,6 +167,9 @@ describe('Employee e2e test', () => {
 
       cy.get(`[data-cy="commissionPct"]`).type('97402').should('have.value', '97402');
 
+      cy.get(`[data-cy="isEngineer"]`).should('not.be.checked');
+      cy.get(`[data-cy="isEngineer"]`).click().should('be.checked');
+
       cy.get(entityCreateSaveButtonSelector).click();
 
       cy.wait('@postEntityRequest').then(({ response }) => {

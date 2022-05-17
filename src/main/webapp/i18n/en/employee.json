@@ -25,6 +25,7 @@
       "hireDate": "Hire Date",
       "salary": "Salary",
       "commissionPct": "Commission Pct",
+      "isEngineer": "Is Engineer",
       "job": "Job",
       "manager": "Manager",
       "department": "Department",

@@ -11,9 +11,12 @@ export interface IEmployee {
   hireDate?: string | null;
   salary?: number | null;
   commissionPct?: number | null;
+  isEngineer?: boolean | null;
   jobs?: IJob[] | null;
   manager?: IEmployee | null;
   department?: IDepartment | null;
 }
 
-export const defaultValue: Readonly<IEmployee> = {};
+export const defaultValue: Readonly<IEmployee> = {
+  isEngineer: false,
+};

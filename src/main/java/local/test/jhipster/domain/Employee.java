@@ -49,6 +49,9 @@ public class Employee implements Serializable {
     @Column(name = "commission_pct")
     private Long commissionPct;
 
+    @Column(name = "is_engineer")
+    private Boolean isEngineer;
+
     @OneToMany(mappedBy = "employee")
     @JsonIgnoreProperties(value = { "tasks", "employee" }, allowSetters = true)
     private Set<Job> jobs = new HashSet<>();
@@ -171,6 +174,19 @@ public class Employee implements Serializable {
         this.commissionPct = commissionPct;
     }
 
+    public Boolean getIsEngineer() {
+        return this.isEngineer;
+    }
+
+    public Employee isEngineer(Boolean isEngineer) {
+        this.setIsEngineer(isEngineer);
+        return this;
+    }
+
+    public void setIsEngineer(Boolean isEngineer) {
+        this.isEngineer = isEngineer;
+    }
+
     public Set<Job> getJobs() {
         return this.jobs;
     }
@@ -259,6 +275,7 @@ public class Employee implements Serializable {
             ", hireDate='" + getHireDate() + "'" +
             ", salary=" + getSalary() +
             ", commissionPct=" + getCommissionPct() +
+            ", isEngineer='" + getIsEngineer() + "'" +
             "}";
     }
 }

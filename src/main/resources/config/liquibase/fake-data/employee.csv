@@ -1,3 +1,11 @@
-id;first_name;last_name;email;phone_number;hire_date;salary;commission_pct
-1;Иван;Иванов;Immanuel_40@gmail.com;Бетонный ул.;2022-05-16T10:18:53;51073;32002
-2;Вася;Пупкин;Harmon.97@gmail.com;Маленький Ставропольский Невероятный;2022-05-15T19:52:34;71090;65309
+id;first_name;last_name;email;phone_number;hire_date;salary;commission_pct;is_engineer
+1;Lola;Кабанова;Immanuel_40@gmail.com;modular Бетонный ул.;2022-05-16T10:18:53;51073;32002;false
+2;Bert;Исаев;Kevon97@mail.ru;Маленький Ставропольский Невероятный;2022-05-15T19:52:34;71090;65309;true
+3;Deonte;Новикова;Jeromy.@mail.ru;orchestrate Национальный Иран;2022-05-16T05:16:07;52932;746;false
+4;Karen;Гущина;Brando13@gmail.com;музыка open-source;2022-05-16T08:36:44;73893;65341;true
+5;Imogene;Марков;Tremaine24@hotmail.com;Account;2022-05-16T09:14:21;72993;41375;false
+6;Chandler;Ефимова;Jovanny.@hotmail.com;infrastructures музыка payment;2022-05-15T23:37:06;24520;4060;false
+7;Alexandro;Нестеров;Maximillian_98@hotmail.com;белый;2022-05-16T02:40:28;90189;81327;false
+8;Name;Титов;Daniela49@ya.ru;users;2022-05-16T12:15:28;62485;59428;false
+9;Amy;Филиппова;Casper.@yandex.ru;обувь;2022-05-16T08:57:58;62582;93711;true
+10;Cathy;Мясников;Westley.@gmail.com;ул.;2022-05-16T00:35:03;39718;32719;true
