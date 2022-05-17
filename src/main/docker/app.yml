@@ -15,7 +15,7 @@ services:
     ports:
       - 127.0.0.1:8080:8080
   simplesite-postgresql:
-    image: postgres:14.2
+    image: 'postgres:14.2-alpine'
     # volumes:
     #   - ~/volumes/jhipster/SimpleSite/postgresql/:/var/lib/postgresql/data/
     environment:
@@ -24,4 +24,4 @@ services:
     # If you want to expose these ports outside your dev PC,
     # remove the "127.0.0.1:" prefix
     ports:
-      - 127.0.0.1:5432:5432
+      - 5432:5432
