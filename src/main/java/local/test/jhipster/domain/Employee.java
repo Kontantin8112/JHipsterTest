@@ -7,6 +7,7 @@ import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
 
 /**
  * The Employee entity.
@@ -50,7 +51,7 @@ public class Employee implements Serializable {
     private Long commissionPct;
 
     @Column(name = "is_engineer")
-    private Boolean isEngineer;
+    private Boolean isEngineer = false;
 
     @OneToMany(mappedBy = "employee")
     @JsonIgnoreProperties(value = { "tasks", "employee" }, allowSetters = true)

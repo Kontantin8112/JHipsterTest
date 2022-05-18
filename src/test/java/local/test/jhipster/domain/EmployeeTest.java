@@ -3,6 +3,7 @@ package local.test.jhipster.domain;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import local.test.jhipster.web.rest.TestUtil;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 class EmployeeTest {
@@ -19,5 +20,11 @@ class EmployeeTest {
         assertThat(employee1).isNotEqualTo(employee2);
         employee1.setId(null);
         assertThat(employee1).isNotEqualTo(employee2);
+    }
+
+    @Test
+    void newEmployeeShouldHaveIsIngineerFalse() {
+        Employee employee1 = new Employee();
+        Assert.assertFalse(employee1.getIsEngineer());
     }
 }
